@@ -1,12 +1,14 @@
+import * as dotenv from 'dotenv';
+dotenv.config();
 
 export const db = require('knex')({
-    client: 'mysql2',
+    client: process.env.CLIENT_DB,
     connection: {
-      host: '127.0.0.1',
-      port: 3306,
-      user: 'root',
-      password: '123123',
-      database: 'usercrud',
+      host: process.env.HOST_DB,
+      port: process.env.PORT_DB,
+      user: process.env.USER_DB,
+      password: process.env.PASSWORD_DB,
+      database: process.env.DATABASE_NAME,
     },
     useNullAsDefault: true,
   });
