@@ -1,7 +1,8 @@
 import * as dotenv from 'dotenv';
+import { Knex, knex } from 'knex';
 dotenv.config();
 
-export const db = require('knex')({
+export const db: Knex = require('knex')({
     client: process.env.CLIENT_DB,
     connection: {
       host: process.env.HOST_DB,
